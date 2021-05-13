@@ -20,6 +20,10 @@ const QuestionSchema = new mongoose.Schema({
     correctAns:{
         type: String,
         required: true
+    },
+    examId: {
+        type: String,
+        required: true
     }
 });
 const Question = mongoose.model("Question", QuestionSchema);

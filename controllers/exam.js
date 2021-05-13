@@ -36,6 +36,16 @@ exports.exams = async(req, res, next) => {
         next(error);
     }
 };
+
+// 
+exports.specExam = async(req, res, next) => {
+    try {
+        const specdExam = await Exam.findOne({_id: req.params.examId})
+        res.json(specdExam);
+    } catch (error) {
+        next(error);
+    }
+}
  
 // DELETE Exam
 exports.deleteExam = async(req, res, next) => {
