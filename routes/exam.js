@@ -18,8 +18,8 @@ router.route("/exam/addQues").post(createQuestion);
 router.route("/exam?:examId").get(questions);
 router.route("/exam/addQues/quesList/:quesId").delete(deleteQues);
 
-router.route("/result/exam?:examId").post(createResult);
-router.route("/result/exam?:examId").get(result);
+router.route("/result").post(createResult);
+router.route("/result/exam?:examId").get(result); 
 
 
 module.exports = router;

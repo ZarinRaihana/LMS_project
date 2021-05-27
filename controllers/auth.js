@@ -21,11 +21,11 @@ exports.register = async(req, res, next) => {
     }
 
 };
-
+ 
 
 //  Login User
 exports.login = async(req, res, next) => {
-    const { email, password, role } = req.body;
+    const { email, password  } = req.body;
 
     // Check if email and password is provided
     if(!email || !password ){
