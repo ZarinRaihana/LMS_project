@@ -44,7 +44,7 @@ exports.login = async(req, res, next) => {
         const isMatch = await user.matchPasswords(password);
 
         if (!isMatch){
-            return next(new ErrorResponse("Please provide email and password"), 401);
+            return next(new ErrorResponse("Please provide correct email and password"), 401);
         }
 
         // Check Role

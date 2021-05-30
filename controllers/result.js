@@ -22,10 +22,10 @@ exports.createResult = async(req, res, next) => {
     }
 
 };
-
+// ALL result
 exports.result = async(req, res, next) => {
     try{
-        const results = await Result.find();
+        const results = await Result.find({ examId: req._parsedUrl.query });
         res.json(results);
     }catch(error){
         next(error);
