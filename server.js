@@ -2,6 +2,7 @@ require('dotenv').config({path: "./config.env"})
 const express = require('express');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
+const path = require("path");
 
 //Connect DB
 connectDB();
@@ -14,6 +15,13 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/private', require('./routes/private'));
 app.use('/api/teacherDash', require('./routes/exam'));
 app.use('/api/studentDash', require('./routes/exam'));
+
+if (process.env.NODE_ENV === 'production') {
+     app.use(express.static('client/build'))
+     app.get('*', (req, res) => {
+         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+     })
+ }
 
 // errorHandler should be last piece of middleware
 app.use(errorHandler);
