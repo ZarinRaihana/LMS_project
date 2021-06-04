@@ -82,6 +82,9 @@ const LoginScreen = ({ history }) => {
         <span className="login-screen__subtext">
           Don't have an account? <Link to="/register">Register</Link>
         </span>
+        <span className="login-screen__subtext">
+          <Link to="/home">Home</Link>
+        </span>
       </form>
     </div>
   );

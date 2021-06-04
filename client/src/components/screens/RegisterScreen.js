@@ -104,7 +104,7 @@ const RegisterScreen = ({ history }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
-        <RadioGroup value = {role} onChange={(e) => setRole(e.target.value)}>
+        <RadioGroup row value = {role} onChange={(e) => setRole(e.target.value)}>
           <FormControlLabel value="student" control={<Radio/>} label="Student"></FormControlLabel>
           <FormControlLabel value="teacher" control={<Radio/>} label="Teacher"></FormControlLabel>
         </RadioGroup>
@@ -115,6 +115,9 @@ const RegisterScreen = ({ history }) => {
 
         <span className="register-screen__subtext">
           Already have an account? <Link to="/login">Login</Link>
+        </span>
+        <span className="register-screen__subtext">
+          <Link to="/home">Home</Link>
         </span>
       </form>
     </div>
