@@ -3,12 +3,10 @@ import { CssBaseline, makeStyles } from '@material-ui/core';
 import React from 'react';
 import Exams from '../../pages/Exams/Exams';
 import Header from './Header';
-//import PageHeader from './PageHeader';
-import SideMenu from './SideMenu';
 
 const useStyles = makeStyles({
     dashMain:{
-        paddingLeft: '200px',
+        // paddingLeft: '100px',
         width: '100%',
     }
 })
@@ -17,7 +15,7 @@ function TeacherDash() {
     const classes = useStyles();
     return (
         <>
-            <SideMenu />
+            {/* <SideMenu /> */}
             <div className={classes.dashMain} >
                 <Header title="Teacher" />
                 

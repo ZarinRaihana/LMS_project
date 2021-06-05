@@ -3,12 +3,11 @@ import ListAltIcon from '@material-ui/icons/ListAlt';
 import React from 'react';
 import Header from '../Teacher/Header';
 import PageHeader from '../Teacher/PageHeader';
-import SideMenu from '../Teacher/SideMenu';
 import Examlist from './Examlist';
 
 const useStyles = makeStyles({
     dashMain:{
-        paddingLeft: '200px',
+        // paddingLeft: '200px',
         width: '100%',
     }
 })
@@ -18,7 +17,7 @@ const StudentDash = (username) => {
     // console.log(username)
     return (
         <>
-            <SideMenu />
+            {/* <SideMenu /> */}
             <div className={classes.dashMain} >
                 <Header title= "Student" />
                 <PageHeader title = "Exam List" icon= { <ListAltIcon fontSize="large" /> } />

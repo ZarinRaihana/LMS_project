@@ -7,7 +7,7 @@ const style = {
         flexDirection: 'column',
         position: 'absolute',
         left: '0px',
-        width: '200px',
+        width: '100px',
         height: '300%',
         backgroundColor: '#253053'
     }
