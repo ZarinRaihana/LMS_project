@@ -92,7 +92,7 @@ async function getList(setVal){
                           .map((obj) => {
                            if( obj.length> 0 ) return (
                             <StyledTableRow key={row._id}>
-                              {console.log(obj)}
+                              {/* {console.log(obj)} */}
                         {/* <StyledTableCell component="th" scope="row">
                             {row.name}
                         </StyledTableCell> */} 

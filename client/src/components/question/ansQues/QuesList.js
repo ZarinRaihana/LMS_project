@@ -155,7 +155,7 @@ async function getList(setVal, examId){
                       </RadioGroup>                  
                     </div>
                   
-                  <Button className={classes.button} variant="contained" size="medium" color="primary" type="submit" >Submit</Button>
+                  
                   </div>)
                   ): 
                   (<Box textAlign='center'>
@@ -164,6 +164,10 @@ async function getList(setVal, examId){
                     <Button variant="contained" size="small" color="primary" style={{justifyContent: 'center'}} component= {Link} to={'/'} >Go to Dashboard</Button>
                   </Box>
                   )} 
+                  
+                  {val.length> 0 ?<Button className={classes.button} variant="contained" size="medium" color="primary" type="submit" >Submit</Button>
+                  :
+                  ''}
               </form>
             </Paper>
           </div>

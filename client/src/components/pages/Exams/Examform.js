@@ -6,9 +6,9 @@ import { Form, useForm } from "../../form/useForm";
  
  
 const initialValues = {
-    department: ' ',
-    course: ' ',
-    quizNo: ' ',
+    department: '',
+    course: '',
+    quizNo: '',
     // numofQues: '',
     // marks: '',
     err: '',
@@ -36,15 +36,14 @@ const useStyles = makeStyles((theme) => ({
 
 function Examform( {onClose,username}) {
     const classes = useStyles();
-    const [user, setUser] = React.useState('');
-    // if (username.username.length > 0 )setUser(username.username)
-    // console.log(user);
+    // const [valid, setValid] = React.useState(true);
+
     // Form validation
     const validate = () => {
         let temp = {}
         temp.course = values.course.trim().length ? values.course.trim() : window.alert('Course Name is required')
         temp.department = values.department.trim().length ? values.department.trim() : window.alert('Department is required')
-        console.log(temp);
+        // console.log(temp);
         setErrors({
             ...temp
         })
@@ -84,7 +83,7 @@ function Examform( {onClose,username}) {
        e.preventDefault()
        if (validate())
        {window.alert('Testing...')}
-       //
+
       setTimeout(()=>closeModal(), 500);
     // axios
       const config = {
@@ -96,21 +95,24 @@ function Examform( {onClose,username}) {
     try {
         
         let {department, course, quizNo, date} = values;
-        console.log(username);
+        // console.log(values);
         date = selectedDate;
         
-        await axios.post(
-            "api/teacherDash/exam", 
-            {   username:username.username,
-                department, 
-                course, 
-                quizNo,                               
-                date},
-           config
-        ).then((res) => {
-            console.log(res.data);
-            // setValues(" ");
-        });
+        if(department !== '' && course !=='')
+        {
+            await axios.post(
+                "api/teacherDash/exam", 
+                {   username:username.username,
+                    department, 
+                    course, 
+                    quizNo,                               
+                    date},
+            config
+            ).then((res) => {
+                console.log(res.data);
+                // setValues(" ");
+            });
+        }
     } 
     catch (error) {
         console.log(error)
