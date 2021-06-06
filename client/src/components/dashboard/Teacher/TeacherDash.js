@@ -11,15 +11,16 @@ const useStyles = makeStyles({
     }
 })
 
-function TeacherDash() {
+function TeacherDash(user) {
     const classes = useStyles();
+    // console.log(user)
     return (
         <>
             {/* <SideMenu /> */}
             <div className={classes.dashMain} >
                 <Header title="Teacher" />
                 
-                <Exams />
+                <Exams username={user.user.username} />
                 
             </div>
             <CssBaseline/>

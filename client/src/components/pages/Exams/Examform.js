@@ -32,11 +32,13 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         width: "80%"
     }
-  }));
+  })); 
 
-function Examform({onClose}) {
+function Examform( {onClose,username}) {
     const classes = useStyles();
-
+    const [user, setUser] = React.useState('');
+    // if (username.username.length > 0 )setUser(username.username)
+    // console.log(user);
     // Form validation
     const validate = () => {
         let temp = {}
@@ -92,13 +94,15 @@ function Examform({onClose}) {
       };
 
     try {
+        
         let {department, course, quizNo, date} = values;
-        // console.log(date);
+        console.log(username);
         date = selectedDate;
-        // console.log(date);
-        const data = await axios.post(
+        
+        await axios.post(
             "api/teacherDash/exam", 
-            {department, 
+            {   username:username.username,
+                department, 
                 course, 
                 quizNo,                               
                 date},

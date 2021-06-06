@@ -31,9 +31,11 @@ const useStyles= makeStyles(theme => ({
 }));
 
 
-function Exams() {
+function Exams(username) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
+
+  // console.log(username)
 
   const handleOpen = () => {
     setOpen(true);
@@ -61,11 +63,11 @@ function Exams() {
             >
                 <Fade in={open}>
                     <Paper  className={classes.paper} >
-                    <Examform onClose={handleClose}/>
+                    <Examform onClose={handleClose} username={username}  />
                     </Paper>  
                 </Fade>
             </Modal>
-            <Examlist />
+            <Examlist username={username}/>
             {/* <Paper className = {classes.pageContent}>
                 <Examform />
             </Paper> */}

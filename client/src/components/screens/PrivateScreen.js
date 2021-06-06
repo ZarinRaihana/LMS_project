@@ -52,7 +52,7 @@ const PrivateScreen = ({history}) => {
     {/* <button onClick = {logoutHandler}>Logout</button>  */}
   
     
-    { privateData.role==="teacher" && <TeacherDash/> }
+    { privateData.role==="teacher" && <TeacherDash user = {privateData}/> }
     
      { privateData.role==="student" && < StudentDash username={privateData.username} />    }
     </>

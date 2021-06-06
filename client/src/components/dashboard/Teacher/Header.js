@@ -4,7 +4,7 @@ import Logout from "../Teacher/Logout";
 
 const useStyles = makeStyles({
     root:{
-        padding: '10px',
+        padding: '6px',
     }
 })
 

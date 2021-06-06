@@ -53,7 +53,9 @@ async function getList(setVal){
     }
 
   
-  const Examlist = (department, course, quizNo, date ) => {
+  const Examlist = (username, department, course, quizNo, date ) => {
+    const user = username.username.username;
+    // console.log(user)
     const classes = useStyles();
     const [val, setVal] = React.useState({});
     
@@ -83,11 +85,18 @@ async function getList(setVal){
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                   {val.length> 0 ? val.map((row) => (
-                        <StyledTableRow key={row._id}>
+                   {val.length> 0  ? val.map((row) => (
+                       Object.values(row).filter((username) =>  {
+                        
+                          return(username === user)})
+                          .map((obj) => {
+                           if( obj.length> 0 ) return (
+                            <StyledTableRow key={row._id}>
+                              {console.log(obj)}
                         {/* <StyledTableCell component="th" scope="row">
                             {row.name}
-                        </StyledTableCell> */}
+                        </StyledTableCell> */} 
+                        
                           <StyledTableCell align="center">{row.department}</StyledTableCell>
                           <StyledTableCell align="center">{row.course}</StyledTableCell>
                           <StyledTableCell align="center">{row.quizNo}</StyledTableCell>
@@ -104,8 +113,13 @@ async function getList(setVal){
                           <StyledTableCell align="center">
                             <Button variant="contained" size="small" color="secondary" onClick={()=>deleteList(row._id)} >Delete</Button>
                           </StyledTableCell>
-                        </StyledTableRow>
-                    )) : "No Exam found"}
+                        </StyledTableRow> 
+                           ) 
+                        else return "no exam" }
+                        )
+                     
+                    )) : "No Exam found"} 
+                     
                     </TableBody>
                 </Table>
             </TableContainer>

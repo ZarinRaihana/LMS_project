@@ -4,10 +4,11 @@ const ErrorResponse = require('../utils/errorResponse');
 
 // Creating Exam
 exports.createExam = async(req, res, next) => {
-    const {department, course, quizNo, numofQues, marks, date} = req.body;
+    const {username, department, course, quizNo, numofQues, marks, date} = req.body;
 
     try{
         const exam = await Exam.create({
+            username,
             department, 
             course, 
             quizNo, 
