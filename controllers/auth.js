@@ -21,6 +21,16 @@ exports.register = async(req, res, next) => {
     }
 
 };
+
+// Update Profile
+// exports.upUser = async(req, res, next) => {
+//     try {
+//         const upUser = await User.updateOne({_id: req.params.userId})
+//         res.json(upUser);
+//     } catch (error) {
+//         next(error);
+//     }
+// }
  
 
 //  Login User

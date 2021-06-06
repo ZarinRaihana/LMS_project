@@ -18,7 +18,7 @@ function TeacherDash(user) {
         <>
             {/* <SideMenu /> */}
             <div className={classes.dashMain} >
-                <Header title="Teacher" />
+                <Header title="Teacher Dashboard" />
                 
                 <Exams username={user.user.username} />
                 

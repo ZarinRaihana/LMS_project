@@ -1,6 +1,7 @@
-import { makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, withStyles } from '@material-ui/core';
+import { Button, Divider, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, withStyles } from '@material-ui/core';
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -85,11 +86,13 @@ const ProcessResult = () => {
                             <StyledTableCell align="center">{row.marks}</StyledTableCell>
                         </StyledTableRow>
                     ))
-                    : "No Student attended the exam"
+                    : <Typography variant="body1" >No Student attended the exam</Typography>
                   }
                     </TableBody>
                 </Table>
-            </TableContainer>
+            </TableContainer> <br></br>
+            <Divider/> <br></br>
+            <Button variant="outlined" color="primary" component= {Link} to={'/'}>Go to Dashboard</Button>
             </Paper>
         </div>
     )

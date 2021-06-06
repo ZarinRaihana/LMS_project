@@ -6,7 +6,7 @@ import QuesList from "./QuesList";
 const AnsQues = () => {
     return (
         <div>
-            <Header title="Student" /><br></br>
+            <Header /><br></br>
             <Typography variant="h4" align="center">Question</Typography>
             <QuesList />
         </div>

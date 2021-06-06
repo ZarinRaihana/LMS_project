@@ -17,7 +17,7 @@ const AddQues = () => {
     const classes= useStyles();
     return (
         <div>
-            <Header title="Teacher"/>
+            <Header title="Dashboard"/>
             <br></br>
             <h3 align="center">Questions</h3><br></br>
             <Grid container className={classes.item} >

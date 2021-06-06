@@ -1,5 +1,6 @@
   
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import Profile from "./components/dashboard/Profile";
 // import StudentDash from "./components/dashboard/Student/StudentDash";
 // import TeacherDash from "./components/dashboard/Teacher/TeacherDash";
 import home from "./components/home/Home";
@@ -27,6 +28,8 @@ const App = () => {
             {/* <Route exact path="/studentDash" component={StudentDash} /> */}
             <Route exact path="/studentDash/:id" component={AnsQues} />
             <Route exact path="/result/:id" component={Result} />
+            {/* <Route exact path="/profile" component={Profile} /> */}
+
           </Switch>
         </div>
     </Router>

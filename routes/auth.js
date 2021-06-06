@@ -4,6 +4,7 @@ const router = express.Router();
 
 const { 
     register, 
+    // upUser
     login, 
     forgotpassword, 
     resetpassword 
@@ -13,6 +14,8 @@ const {
 router.route("/register").post(register);
 
 router.route("/login").post(login);
+
+// router.route("/profile/:userId").patch(upUser);
 
 router.route("/forgotpassword").post(forgotpassword);
 

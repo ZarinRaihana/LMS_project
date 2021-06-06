@@ -19,7 +19,7 @@ const StudentDash = (username) => {
         <>
             {/* <SideMenu /> */}
             <div className={classes.dashMain} >
-                <Header title= "Student" />
+                <Header title= "Student Dashboard" />
                 <PageHeader title = "Exam List" icon= { <ListAltIcon fontSize="large" /> } />
                  <Examlist username={username.username} />
             </div>

@@ -1,6 +1,7 @@
-import { Button, FormControlLabel, makeStyles, Paper, Radio, RadioGroup, Typography } from '@material-ui/core';
+import { Box, Button, FormControlLabel, makeStyles, Paper, Radio, RadioGroup, Typography } from '@material-ui/core';
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -136,7 +137,7 @@ async function getList(setVal, examId){
             <Paper >
               <form onSubmit={handleSubmit} > 
                 {val.length> 0 ? val.map((row) => 
-                  (
+                  ( <div>
                     <div key={row._id}> 
                       <Typography variant="h6" > {val.indexOf(row)+1}. {row.ques}</Typography>
 
@@ -153,9 +154,16 @@ async function getList(setVal, examId){
                           
                       </RadioGroup>                  
                     </div>
-                  )
-                  ): "No Questions Found"} 
+                  
                   <Button className={classes.button} variant="contained" size="medium" color="primary" type="submit" >Submit</Button>
+                  </div>)
+                  ): 
+                  (<Box textAlign='center'>
+                    <div>No Questions Found</div>
+                    <br></br> <br></br>
+                    <Button variant="contained" size="small" color="primary" style={{justifyContent: 'center'}} component= {Link} to={'/'} >Go to Dashboard</Button>
+                  </Box>
+                  )} 
               </form>
             </Paper>
           </div>
@@ -165,10 +173,12 @@ async function getList(setVal, examId){
             <br></br>
             <br></br>
             <Typography variant="body1" align="center">Your Answer has been submitted successfully.</Typography>
-            {/* <br></br>
+            <br></br>
             <br></br>
             <Box textAlign='center'>
-            <Button variant="contained" size="large" color="primary" style={{justifyContent: 'center'}} component= {Link} to={`/result/exam?${examId}`} >See Results</Button></Box> */}
+            <Button variant="contained" size="large" color="primary" style={{justifyContent: 'center'}} component= {Link} to={`/result/exam?${examId}`} >See Results</Button> <br></br> <br></br> 
+            <Button variant="contained" size="large" color="primary" style={{justifyContent: 'center'}} component= {Link} to={'/'} >Go to Dashboard</Button>
+            </Box>
           </div>
         
       )}
