@@ -4,11 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "node server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
+    }
   },
   "keywords": [],
   "author": "Zarin Raihana",
@@ -19,7 +21,8 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.13"
+    "mongoose": "^6.0.13",
+    "serve": "^13.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
