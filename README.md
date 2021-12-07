@@ -19,7 +19,7 @@ Code technologies I got involved with while working on this project -
 The system has a homepage where respective users (Teacher & students) can signup/login to perform their different operations. 
 
 
-### As an Teacher 
+### As a Teacher 
 
 1. Teacher shall be able to create exams.
 2. Teacher shall be able to delete exams.
